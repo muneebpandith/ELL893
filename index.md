@@ -1,37 +1,28 @@
-## Welcome to GitHub Pages
+## Smart Home Application using HTTP as Communication Protocol
 
-You can use the [editor on GitHub](https://github.com/muneebpandith/ELL893/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+> This work contains an Emulator and Client UI App, Device App that controls the emulator
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
+## Process for running the application
 
-- Bulleted
-- List
+**STEP 1**: Deploy the Device App on EC2 Instance on AWS (or similar infrastructure) using Python/Flask as backend. 
 
-1. Numbered
-2. List
+**STEP 2**: Open the TCP port (that will be used to make the Flask port public) in network/security policies of the instance settings.
+> Usually Flask runs on port 5000, but it is reconfigurable
 
-**Bold** and _Italic_ and `Code` text
+**STEP 3**: Open the ClientApp in any window (Make sure API_ROOT in client app is set as the IP:PORT of your EC2 instance and flask port)
+> Example: muneebpandith.github.io/ELL893/client/index.html
 
-[Link](url) and ![Image](src)
-```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
 
-### Jekyll Themes
+**STEP 4**: Run the Emulator App in another tab/window:
+> Example: muneebpandith.github.io/ELL893/emulator/index.html
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/muneebpandith/ELL893/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
-### Support or Contact
+**STEP 5**: Interact from client app and see changes in emulator 
+## Work Flow Diagram
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+![HTTP based Work Flow](https://github.com/muneebpandith/ELL893/blob/main/flow.png)
